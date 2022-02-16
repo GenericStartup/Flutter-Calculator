@@ -1,5 +1,5 @@
 # Flutter-Calculator
-This is a scientific calculator 🖩 mobile application built on Flutter and Spring 📱 <br />
+This is a scientific calculator mobile application built on Flutter and Spring 📱 <br />
 This guide was created by Hayden Hanson, Joshua Hilbert, Nicholas Thor Page and Willie Warren <br />
 
 # Getting Started...
@@ -7,4 +7,10 @@ This guide was created by Hayden Hanson, Joshua Hilbert, Nicholas Thor Page and 
 
 # Installation Guide for Windows
 
-Step 1: 
+Step 1: Download Flutter SDK <br />
+Here is the link: https://docs.flutter.dev/get-started/install <br />
+*Keep track of where you download this SDK, you will need to keep hold of the file path* <br />
+
+Step 2: Update your PATH <br />
+*This allows you to run Flutter commands from Command Prompt* <br />
+To do this, ___
