@@ -1,5 +1,5 @@
 # Flutter-Calculator
-This is a scientific calculator built on Flutter and Spring, this was used in our interactive tutorial and demo of Flutter Mobile Development in CS321 at George Mason University.
-# Installation Guide for WINDOWS
+This is a scientific calculator 🖩 mobile application built on Flutter and Spring 📱
+# Installation Guide for Windows
 
 Step 1: 
