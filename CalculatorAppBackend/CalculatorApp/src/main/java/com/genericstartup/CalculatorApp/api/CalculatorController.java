@@ -14,7 +14,7 @@ import javax.script.ScriptException;
 public class CalculatorController {
 
     @GetMapping(path = "calculate/{expression}")
-    public String getCalculationResult(@PathVariable("string") String expression) throws ScriptException {
+    public String getCalculationResult(@PathVariable("expression") String expression) throws ScriptException {
         ScriptEngineManager mgr = new ScriptEngineManager();
         ScriptEngine engine = mgr.getEngineByName("JavaScript");
         return String.valueOf(engine.eval(expression));
