@@ -58,14 +58,13 @@ class _HomePageState extends State<HomePage> {
         title: new Text("Flutter Calculator"),
         backgroundColor: Colors.green,
       ), //AppBar
-      backgroundColor: Colors.white38,
+      backgroundColor: Colors.green[900],
 
 
       // Body
       body: Column(
         children: <Widget>[
           // `Expanded` makes its contents fill all available space
-          // TODO: These widgets are not being rendered on web
           Expanded(
             child: Container(
               child: Column(
