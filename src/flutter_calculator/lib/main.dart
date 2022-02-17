@@ -6,15 +6,17 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  // Initializes the app as a "Material Application"
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: HomePage(), //defines the default page / screen
     ); // MaterialApp
   }
 }
 
+// Classifies the home page as a widget that has a state
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -51,18 +53,25 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Bar along the top / title
       appBar: new AppBar(
         title: new Text("Flutter Calculator"),
         backgroundColor: Colors.green,
       ), //AppBar
       backgroundColor: Colors.white38,
+
+
+      // Body
       body: Column(
         children: <Widget>[
+          // `Expanded` makes its contents fill all available space
+          // TODO: These widgets are not being rendered on web
           Expanded(
             child: Container(
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
+                    // Displays the equation being input
                     Container(
                       padding: EdgeInsets.all(20),
                       alignment: Alignment.centerRight,
@@ -71,6 +80,8 @@ class _HomePageState extends State<HomePage> {
                         style: TextStyle(fontSize: 18, color: Colors.white),
                       ),
                     ),
+
+                    // Displays the result of the equation
                     Container(
                       padding: EdgeInsets.all(15),
                       alignment: Alignment.centerRight,
@@ -88,6 +99,7 @@ class _HomePageState extends State<HomePage> {
           Expanded(
             flex: 3,
             child: Container(
+              // Button Grid
               child: GridView.builder(
                   itemCount: buttons.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
