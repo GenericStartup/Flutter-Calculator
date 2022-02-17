@@ -52,7 +52,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        title: new Text("Calculator"),
+        title: new Text("Flutter Calculator"),
+        backgroundColor: Colors.green,
       ), //AppBar
       backgroundColor: Colors.white38,
       body: Column(
@@ -102,7 +103,7 @@ class _HomePageState extends State<HomePage> {
                           });
                         },
                         buttonText: buttons[index],
-                        color: Colors.blue[50],
+                        color: Colors.green,
                         textColor: Colors.black,
                       );
                     }
@@ -111,7 +112,7 @@ class _HomePageState extends State<HomePage> {
                     else if (index == 1) {
                       return MyButton(
                         buttonText: buttons[index],
-                        color: Colors.blue[50],
+                        color: Colors.green,
                         textColor: Colors.black,
                       );
                     }
@@ -124,7 +125,7 @@ class _HomePageState extends State<HomePage> {
                           });
                         },
                         buttonText: buttons[index],
-                        color: Colors.blue[50],
+                        color: Colors.green,
                         textColor: Colors.black,
                       );
                     }
@@ -138,7 +139,7 @@ class _HomePageState extends State<HomePage> {
                           });
                         },
                         buttonText: buttons[index],
-                        color: Colors.yellow[50],
+                        color: Colors.yellow[200],
                         textColor: Colors.black,
                       );
                     }
@@ -151,8 +152,8 @@ class _HomePageState extends State<HomePage> {
                           });
                         },
                         buttonText: buttons[index],
-                        color: Colors.green[700],
-                        textColor: Colors.white,
+                        color: Colors.white,
+                        textColor: Colors.black,
                       );
                     }
 
@@ -166,7 +167,7 @@ class _HomePageState extends State<HomePage> {
                         },
                         buttonText: buttons[index],
                         color: isOperator(buttons[index])
-                            ? Colors.blueAccent
+                            ? Colors.green
                             : Colors.white,
                         textColor: isOperator(buttons[index])
                             ? Colors.white
