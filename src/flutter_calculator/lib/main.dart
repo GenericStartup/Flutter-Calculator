@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// Classifies the home page as a widget that has a state
+// Classifies the home page as a widget that has a state.
+// We need to do this because our page's contents change; The expression and calculated result need to be updated as the user interacts with the calculator.
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -140,7 +141,7 @@ class _HomePageState extends State<HomePage> {
                         textColor: Colors.black,
                       );
                     }
-                    // Delete Button
+                    // Delete Button. Removes the last character in the expression
                     else if (index == 3) {
                       return MyButton(
                         buttontapped: () {
@@ -154,12 +155,12 @@ class _HomePageState extends State<HomePage> {
                         textColor: Colors.black,
                       );
                     }
-                    // Equal_to Button
+                    // Equals Button. Evaluates the expression when pressed.
                     else if (index == 18) {
                       return MyButton(
                         buttontapped: () {
                           setState(() {
-                            equalPressed();
+                            calculateExpression();
                           });
                         },
                         buttonText: buttons[index],
@@ -168,7 +169,7 @@ class _HomePageState extends State<HomePage> {
                       );
                     }
 
-                    //  other buttons
+                    // other buttons (Numbers, Operators)
                     else {
                       return MyButton(
                         buttontapped: () {
@@ -177,6 +178,9 @@ class _HomePageState extends State<HomePage> {
                           });
                         },
                         buttonText: buttons[index],
+                        // Changes color based on whether or not the button is for an operator.
+                        // Non-Operators: White on Green
+                        // Operators: White on Black
                         color: isOperator(buttons[index])
                             ? Colors.green
                             : Colors.white,
@@ -193,6 +197,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  // Used to color the operator buttons a different color (see above)
   bool isOperator(String x) {
     if (x == '/' || x == 'x' || x == '-' || x == '+' || x == '=') {
       return true;
@@ -201,7 +206,7 @@ class _HomePageState extends State<HomePage> {
   }
 
 // function to calculate the input operation
-  void equalPressed() {
+  void calculateExpression() {
     String finaluserinput = userInput;
     finaluserinput = userInput.replaceAll('x', '*');
 
@@ -213,7 +218,7 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-// creating Stateless Widget for buttons
+// creating Stateless Widget for buttons, as even though interacting with them changes things, the buttons themselves do not change
 class MyButton extends StatelessWidget {
   // declaring variables
   final color;
@@ -230,18 +235,18 @@ class MyButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return GestureDetector( // Widget that can detect actions involving it (touch, drag, etc.)
       onTap: buttontapped,
-      child: Padding(
+      child: Padding( // Puts a gap between buttons
         padding: const EdgeInsets.all(0.2),
-        child: ClipRRect(
+        child: ClipRRect( // Constraints its contents to a rectangular area
           // borderRadius: BorderRadius.circular(25),
-          child: Container(
+          child: Container( // Actual widget that becomes visible
             color: color,
-            child: Center(
-              child: Text(
+            child: Center( // Used to center text on button
+              child: Text( // Text itself
                 buttonText,
-                style: TextStyle(
+                style: TextStyle( // Style of the text (color, font, size, etc.)
                   color: textColor,
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
