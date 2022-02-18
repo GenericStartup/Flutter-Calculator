@@ -1,9 +1,9 @@
 package com.genericstartup.CalculatorApp.api;
 
+import com.genericstartup.CalculatorApp.dao.CalculationResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.script.ScriptEngine;
@@ -15,10 +15,9 @@ import javax.script.ScriptException;
 public class CalculatorController {
 
     @GetMapping(path = "calculate/{expression}")
-    @ResponseBody
-    public String getCalculationResult(@PathVariable("expression") String expression) throws ScriptException {
+    public CalculationResult getCalculationResult(@PathVariable("expression") String expression) throws ScriptException {
         ScriptEngineManager mgr = new ScriptEngineManager();
         ScriptEngine engine = mgr.getEngineByName("JavaScript");
-        return String.valueOf(engine.eval(expression));
+        return new CalculationResult(String.valueOf(engine.eval(expression)));
     }
 }
