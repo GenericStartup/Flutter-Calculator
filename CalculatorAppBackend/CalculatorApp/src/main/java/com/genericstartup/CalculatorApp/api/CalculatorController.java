@@ -1,6 +1,7 @@
 package com.genericstartup.CalculatorApp.api;
 
 import com.genericstartup.CalculatorApp.dao.CalculationResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import javax.script.ScriptException;
 public class CalculatorController {
 
     @GetMapping(path = "calculate/{expression}")
+    @CrossOrigin
     public CalculationResult getCalculationResult(@PathVariable("expression") String expression) throws ScriptException {
         ScriptEngineManager mgr = new ScriptEngineManager();
         ScriptEngine engine = mgr.getEngineByName("JavaScript");
