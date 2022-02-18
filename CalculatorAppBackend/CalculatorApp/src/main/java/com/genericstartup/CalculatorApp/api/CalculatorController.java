@@ -1,6 +1,6 @@
 package com.genericstartup.CalculatorApp.api;
 
-import com.genericstartup.CalculatorApp.dao.CalculationResult;
+import com.genericstartup.CalculatorApp.model.CalculationResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

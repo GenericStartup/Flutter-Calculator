@@ -1,4 +1,4 @@
-package com.genericstartup.CalculatorApp.dao;
+package com.genericstartup.CalculatorApp.model;
 
 public class CalculationResult {
 
