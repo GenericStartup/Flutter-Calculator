@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+
+const String BACKEND_URL = "http://localhost:8080/api/calculator/";
+const bool evalLocal = false;
+
 
 void main() {
   runApp(MyApp());
@@ -210,13 +216,46 @@ class _HomePageState extends State<HomePage> {
     String finaluserinput = userInput;
     finaluserinput = userInput.replaceAll('x', '*');
 
-    Parser p = Parser();
-    Expression exp = p.parse(finaluserinput);
-    ContextModel cm = ContextModel();
-    double eval = exp.evaluate(EvaluationType.REAL, cm);
-    answer = eval.toString();
+    if(evalLocal){
+      Parser p = Parser();
+      Expression exp = p.parse(finaluserinput);
+      ContextModel cm = ContextModel();
+      double eval = exp.evaluate(EvaluationType.REAL, cm);
+      answer = eval.toString();
+    }else{
+      answer = "...";
+      late Future<String> evalResult = fetchEvaluatedResult(finaluserinput);
+      evalResult.then((String result) {
+        print(result);
+        setState((){
+          answer = result;
+        });
+      });
+    }
   }
 }
+
+
+// sends a GET request to the backend, which evaluates the expression and returns the result
+Future<String> fetchEvaluatedResult(String expression) async {
+  // Send request and store repsonse locally
+  String request = BACKEND_URL + "calculate/" + expression;
+  print("GET `"+request+"`");
+  final response = await http.get(
+    Uri.parse(request)
+  );
+
+  print("Response code: "+response.statusCode.toString());
+  if(response.statusCode == 200){
+    print(response.body);
+    return jsonDecode(response.body)['result'].toString();
+  }else{
+    return "Unable to connect to evaluation servers!";
+  }
+}
+
+
+
 
 // creating Stateless Widget for buttons, as even though interacting with them changes things, the buttons themselves do not change
 class MyButton extends StatelessWidget {
