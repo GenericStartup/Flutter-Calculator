@@ -21,6 +21,7 @@ Step 2: Update your PATH <br />
 6. Now, go to your command line and type the command 'where flutter', you should see a file path similar to: <br/>
 
 *C:\Users\Hayden Hanson\Developer Tools\flutter\bin* <br/>
+
 7. Paste this file path into your 'New' entry, then click OK. <br/>
 
 Flutter is now added to your machines Path! <br/>
