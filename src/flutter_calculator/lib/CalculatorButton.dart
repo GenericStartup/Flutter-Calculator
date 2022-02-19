@@ -1,6 +1,9 @@
+library FlutterCalculator;
+
 import 'package:flutter/material.dart';
 
-class MyButton extends StatelessWidget {
+// creating Stateless Widget for buttons, as even though interacting with them changes things, the buttons themselves do not change
+class CalculatorButton extends StatelessWidget {
   // declaring variables
   final color;
   final textColor;
@@ -8,7 +11,7 @@ class MyButton extends StatelessWidget {
   final buttontapped;
 
   //Constructor
-  MyButton(
+  CalculatorButton(
       {this.color,
       this.textColor,
       required this.buttonText,
