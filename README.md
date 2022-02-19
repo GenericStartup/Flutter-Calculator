@@ -47,3 +47,7 @@ Here is the link: https://visualstudio.microsoft.com/downloads/ <br/>
 2. Once the download is complete, open the installer and be sure to click the option 'Desktop development with C++' <br/>
 
 Step 8: Set up an editor <br/>
+I personally reccomend VS Code... <br/>
+But here is the link to get you set up in your favorite IDE: https://docs.flutter.dev/get-started/editor?tab=vscode <br/>
+
+# Installation Guide for Mac
