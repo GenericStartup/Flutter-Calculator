@@ -8,10 +8,18 @@ import 'dart:convert';
 import 'CalculatorButton.dart';
 
 const String BACKEND_URL = "http://localhost:8080/api/calculator/";
-const bool evalLocal = true;
+
+//Only evaluates the expression locally if explicitly stated with `--dart-define="EVAL_REMOTE=false"
+//TODO: I'm having trouble comparing two constant strings ignoring case.
+const String EVAL_REMOTE = String.fromEnvironment("EVAL_REMOTE");
+const bool evalLocal = (EVAL_REMOTE == "false");
+
+
 
 
 void main() {
+  print(EVAL_REMOTE);
+  print("Evaluating expressions " + (evalLocal ? "locally" : "remotely"));
   runApp(MyApp());
 }
 
