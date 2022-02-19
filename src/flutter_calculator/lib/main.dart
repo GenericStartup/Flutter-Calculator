@@ -236,13 +236,14 @@ class _HomePageState extends State<HomePage> {
       double eval = exp.evaluate(EvaluationType.REAL, cm);
       answer = eval.toString();
     }else{
-      answer = "...";
+      answer = "Calculating...";
       late Future<String> evalResult = fetchEvaluatedResult(finaluserinput);
       evalResult.then((String result) {
         print(result);
-        setState((){
-          answer = result;
-        });
+        setState((){answer = result;});
+      }).catchError((error) {
+        print(error);
+        setState((){answer = "Unable to connect to eval servers!";});
       });
     }
   }
@@ -263,6 +264,6 @@ Future<String> fetchEvaluatedResult(String expression) async {
     print(response.body);
     return jsonDecode(response.body)['result'].toString();
   }else{
-    return "Unable to connect to evaluation servers!";
+    return "Unable to connect to eval servers!";
   }
 }
