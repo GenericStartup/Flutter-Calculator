@@ -13,4 +13,5 @@ Here is the link: https://docs.flutter.dev/get-started/install <br />
 
 Step 2: Update your PATH <br />
 *This allows you to run Flutter commands from Command Prompt* <br />
-To do this, ___
+To do this, go to the Start search bar and type in 'environment' and you should see <b>Edit environment variables for your account<b\>
+  
