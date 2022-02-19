@@ -1,0 +1,43 @@
+import 'package:flutter/material.dart';
+
+class MyButton extends StatelessWidget {
+  // declaring variables
+  final color;
+  final textColor;
+  final String buttonText;
+  final buttontapped;
+
+  //Constructor
+  MyButton(
+      {this.color,
+      this.textColor,
+      required this.buttonText,
+      this.buttontapped}
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector( // Widget that can detect actions involving it (touch, drag, etc.)
+      onTap: buttontapped,
+      child: Padding( // Puts a gap between buttons
+        padding: const EdgeInsets.all(0.2),
+        child: ClipRRect( // Constraints its contents to a rectangular area
+          // borderRadius: BorderRadius.circular(25),
+          child: Container( // Actual widget that becomes visible
+            color: color,
+            child: Center( // Used to center text on button
+              child: Text( // Text itself
+                buttonText,
+                style: TextStyle( // Style of the text (color, font, size, etc.)
+                  color: textColor,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
