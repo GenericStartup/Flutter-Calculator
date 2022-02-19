@@ -156,8 +156,9 @@ class _HomePageState extends State<HomePage> {
                       return CalculatorButton(
                         buttontapped: () {
                           setState(() {
-                            userInput =
-                                userInput.substring(0, userInput.length - 1);
+                            if(userInput.length > 0){
+                              userInput = userInput.substring(0, userInput.length - 1);
+                            }
                           });
                         },
                         buttonText: buttons[index],
