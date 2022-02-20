@@ -8,7 +8,7 @@ This guide was created by Hayden Hanson, Joshua Hilbert, Nicholas Thor Page and 
 # Installation Guide for Windows
 
 Step 1: Download Flutter SDK <br />
-Here is the link: https://docs.flutter.dev/get-started/install <br />
+Here is the link: https://docs.flutter.dev/get-started/install/windows <br />
 *Keep track of where you download this SDK, you will need to keep hold of the file path* <br />
 
 Step 2: Update your PATH <br />
@@ -19,9 +19,7 @@ Step 2: Update your PATH <br />
 4. Click 'Edit...' <br/>
 5. Click 'New' <br/>
 6. Now, go to your command line and type the command 'where flutter', you should see a file path similar to: <br/>
-
-*C:\Users\Hayden Hanson\Developer Tools\flutter\bin* <br/>
-
+     C:\Users\Hayden Hanson\Developer Tools\flutter\bin <br/>
 7. Paste this file path into your 'New' entry, then click OK. <br/>
 
 Flutter is now added to your machines Path! <br/>
@@ -50,4 +48,15 @@ Step 8: Set up an editor <br/>
 I personally reccomend VS Code... <br/>
 But here is the link to get you set up in your favorite IDE: https://docs.flutter.dev/get-started/editor?tab=vscode <br/>
 
+**Now you can begin writing Flutter programs!** <br/>
+
+Windows users can skip to **Setting up the Calculator** <br/>
+
 # Installation Guide for Mac
+
+Step 1: Download Flutter SDK
+*You can download the SDK either directly or from git* <br/>
+Here is the link: https://docs.flutter.dev/get-started/install/macos <br/>
+Keep track of where you download this SDK, you will need to keep hold of the file path <br/>
+
+# Setting up the Calculator
