@@ -105,3 +105,5 @@ But here is the link to get you set up in your favorite IDE: https://docs.flutte
 Move on to **Setting up the Calculator** to use our calculator demo<br/> 
 
 # Setting up the Calculator
+
+Step 1: Clone our repo onto your computer <br/>
