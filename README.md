@@ -8,10 +8,12 @@ This guide was created by Hayden Hanson, Joshua Hilbert, Nicholas Thor Page and 
 # Installation Guide for Windows
 
 Step 1: Download Flutter SDK <br />
+
 Here is the link: https://docs.flutter.dev/get-started/install/windows <br />
 *Keep track of where you download this SDK, you will need to keep hold of the file path* <br />
 
 Step 2: Update your PATH <br />
+
 *This allows you to run Flutter commands from Command Prompt* <br />
 1. To do this, go to the Start search bar and type in 'environment' and you should see *Edit the system environment variables* <br />
 2. Click on 'Environment Variables... <br/>
@@ -25,26 +27,32 @@ Step 2: Update your PATH <br />
 Flutter is now added to your machines Path! <br/>
 
 Step 3: Run 'flutter doctor' from the command prompt <br/>
+
 *Now that Flutter is added to your Path, you can run flutter commands from your command prompt* <br/>
 1. Open command prompt and type 'flutter doctor', if everything up until now was done correctly you should see Flutter working <br> *This tool will tell you what you still need to install to be fully operational*
 2. Follow the instructions that flutter doctor provides. <br/>
 
 Step 4: Install Andriod Studio <br/>
+
 *Visit https://docs.flutter.dev/get-started/install/windows and scroll down to 'Andriod Setup' to complete this step* <br/>
 
 Step 5: Set up your Andriod emulator <br/>
+
 *Visit https://docs.flutter.dev/get-started/install/windows and scroll down to 'Set up the Android emulator' to complete this step* <br/>
 
 Step 6: Agree to Andriod Licesnses <br/>
+
 1. Run 'flutter doctor --android-licesnses on the command line <br/>
 2. Review each term, pressing 'y' for each one until you are finished <br/>
 
 Step 7 (Yes, you're almost done...): Download Visual Studio 2022 <br/>
+
 Here is the link: https://visualstudio.microsoft.com/downloads/ <br/>
 1. Click on 'Community Edition' and the download should begin <br/>
 2. Once the download is complete, open the installer and be sure to click the option 'Desktop development with C++' <br/>
 
 Step 8: Set up an editor <br/>
+
 I personally reccomend VS Code... <br/>
 But here is the link to get you set up in your favorite IDE: https://docs.flutter.dev/get-started/editor?tab=vscode <br/>
 
@@ -54,9 +62,46 @@ Windows users can skip to **Setting up the Calculator** <br/>
 
 # Installation Guide for Mac
 
-Step 1: Download Flutter SDK
+Step 1: Download Flutter SDK <br/>
+
 *You can download the SDK either directly or from git* <br/>
 Here is the link: https://docs.flutter.dev/get-started/install/macos <br/>
 Keep track of where you download this SDK, you will need to keep hold of the file path <br/>
+*Don't forget to add Flutter to your Macs' PATH, instructions are included in the link above* <br/>
+
+Step 2: Run 'flutter doctor' from the terminal <br/>
+
+*Now that Flutter is added to your Path, you can run flutter commands from your terminal* <br/>
+1. Open terminal and type 'flutter doctor', if everything up until now was done correctly you should see Flutter working <br> *This tool will tell you what you still need to install to be fully operational*
+2. Follow the instructions that flutter doctor provides. <br/>
+
+Step 3: iOS setup <br/>
+
+1. Install Xcode from the mac app store <br/>
+2. Configure the Xcode command-line tools by running the following commands: <br/>
+     1. sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer <br/>
+     2. sudo xcodebuild -runFirstLaunch <br/>
+3. Accept the Xcode license agreements <br/>
+
+Step 4: Set up your iOS simulator <br/>
+
+1. Open terminal and run 'open -a Simulator' <br/>
+2. Choose the iPhone you want to preview your Flutter apps on. <br/>
+
+Step 5: Create and run a simple Flutter app <br/>
+
+*We are doing this to initialize some settings with Xcode and the Flutter developement evironment* <br/>
+
+*I could explain how to do this, but the offical website does a very nice job* <br/>
+Here is the link: https://docs.flutter.dev/get-started/install/macos **Scroll down to "Create and run a simple Flutter app** <br/>
+
+Step 6: Set up an editor <br/>
+
+I personally reccomend VS Code... <br/>
+But here is the link to get you set up in your favorite IDE: https://docs.flutter.dev/get-started/editor?tab=vscode <br/>
+
+**Now you can begin writing Flutter programs!** <br/>
+
+Move on to **Setting up the Calculator** to use our calculator demo<br/> 
 
 # Setting up the Calculator
