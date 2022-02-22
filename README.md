@@ -107,8 +107,11 @@ Move on to **Setting up the Calculator** to use our calculator demo<br/>
 # Setting up the Calculator
 
 Step 1: Clone our repo onto your computer <br/>
-Step 2: Open the file with your IDE <br/>
-Step 3: Open an emulator, iOS or android <br/>
-Step 4: Navigate to the file flutter_calculator in your terminal or command prompt and run flutter run --dart-define="EVAL_REMOTE=false" <br/>
+Step 2: Download and install Java 11 <br/>
+Step 3: Set your JAVA_HOME environment variable to Java 11 <br/>
+Step 4: Navigate to Flutter-Calculator/CalculatorAppBackend/CalculatorApp and run mvnw spring-boot:run <br/>
+Step 5: Open the file with your IDE <br/>
+Step 6: Open an emulator, iOS or android <br/>
+Step 7: Navigate to the file flutter_calculator in your terminal or command prompt and run flutter run --dart-define="EVAL_REMOTE=false" <br/>
 
 All finished! 😄
