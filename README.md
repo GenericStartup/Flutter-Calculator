@@ -107,3 +107,8 @@ Move on to **Setting up the Calculator** to use our calculator demo<br/>
 # Setting up the Calculator
 
 Step 1: Clone our repo onto your computer <br/>
+Step 2: Open the file with your IDE <br/>
+Step 3: Open an emulator, iOS or android <br/>
+Step 4: Navigate to the file flutter_calculator in your terminal or command prompt and run flutter run --dart-define="EVAL_REMOTE=false" <br/>
+
+All finished! 😄
