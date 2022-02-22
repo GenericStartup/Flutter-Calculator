@@ -228,6 +228,7 @@ class _HomePageState extends State<HomePage> {
   void calculateExpression() {
     String finaluserinput = userInput;
     finaluserinput = userInput.replaceAll('x', '*');
+    finaluserinput = finaluserinput.replaceAll('/', 'd');
 
     if(evalLocal){
       Parser p = Parser();

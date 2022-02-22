@@ -1,6 +1,7 @@
 package com.genericstartup.CalculatorApp.api;
 
 import com.genericstartup.CalculatorApp.model.CalculationResult;
+import com.genericstartup.CalculatorApp.model.EvalTree;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,9 +18,10 @@ public class CalculatorController {
 
     @GetMapping(path = "calculate/{expression}")
     @CrossOrigin
-    public CalculationResult getCalculationResult(@PathVariable("expression") String expression) throws ScriptException {
-        ScriptEngineManager mgr = new ScriptEngineManager();
-        ScriptEngine engine = mgr.getEngineByName("JavaScript");
-        return new CalculationResult(String.valueOf(engine.eval(expression)));
+    public CalculationResult getCalculationResult(@PathVariable("expression") String expression){
+        System.out.println("Evaluating \""+expression+"\"");
+        EvalTree tree = EvalTree.generate(expression);
+        return new CalculationResult(Double.toString(tree.Eval()));
     }
+
 }
