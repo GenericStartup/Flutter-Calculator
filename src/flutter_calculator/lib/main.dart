@@ -111,11 +111,12 @@ class _HomePageState extends State<HomePage> {
                             fontWeight: FontWeight.bold),
                       ),
                     )
-                  ]),
+                  ]
+              ),
             ),
           ),
           Expanded(
-            flex: 3,
+            flex: 3, // takes up the same space as 3 items
             child: Container(
               // Button Grid
               child: GridView.builder(
@@ -208,7 +209,8 @@ class _HomePageState extends State<HomePage> {
                             : Colors.black,
                       );
                     }
-                  }), // GridView.builder
+                  }
+                ), // GridView.builder
             ),
           ),
         ],
@@ -237,15 +239,21 @@ class _HomePageState extends State<HomePage> {
       double eval = exp.evaluate(EvaluationType.REAL, cm);
       answer = eval.toString();
     }else{
+
       answer = "Calculating...";
       late Future<String> evalResult = fetchEvaluatedResult(finaluserinput);
+
+
       evalResult.then((String result) {
-        print(result);
+        // print(result);
         setState((){answer = result;});
+
       }).catchError((error) {
         print(error);
         setState((){answer = "Unable to connect to eval servers!";});
       });
+
+
     }
   }
 }
@@ -255,14 +263,14 @@ class _HomePageState extends State<HomePage> {
 Future<String> fetchEvaluatedResult(String expression) async {
   // Send request and store repsonse locally
   String request = BACKEND_URL + "calculate/" + expression;
-  print("GET `"+request+"`");
-  final response = await http.get(
-    Uri.parse(request)
-  );
+  // print("GET `"+request+"`");
 
-  print("Response code: "+response.statusCode.toString());
+  final response = await http.get(Uri.parse(request));
+
+  // print("Response code: "+response.statusCode.toString());
   if(response.statusCode == 200){
-    print(response.body);
+    // print(response.body);
+    // Get the result from the response and turn it into a string.
     return jsonDecode(response.body)['result'].toString();
   }else{
     return "Unable to connect to eval servers!";
