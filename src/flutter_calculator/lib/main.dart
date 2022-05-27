@@ -1,4 +1,4 @@
-library FlutterCalculator;
+library flutter_calculator;
 
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
@@ -7,23 +7,24 @@ import 'dart:convert';
 
 import 'CalculatorButton.dart';
 
-const String BACKEND_URL = "http://localhost:8080/api/calculator/";
+const String backendUrl = "http://localhost:8080/api/calculator/";
 
 //Only evaluates the expression locally if explicitly stated with `--dart-define="EVAL_REMOTE=false"
 //TODO: I'm having trouble comparing two constant strings ignoring case.
-const String EVAL_REMOTE = String.fromEnvironment("EVAL_REMOTE");
-const bool evalLocal = (EVAL_REMOTE == "false");
+const String evalRemote = String.fromEnvironment("EVAL_REMOTE");
+const bool evalLocal = (evalRemote == "false");
 
 
 
 
 void main() {
-  print(EVAL_REMOTE);
-  print("Evaluating expressions " + (evalLocal ? "locally" : "remotely"));
-  runApp(MyApp());
+  //print(EVAL_REMOTE);
+  //print("Evaluating expressions " + (evalLocal ? "locally" : "remotely"));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}): super(key: key);
   // Initializes the app as a "Material Application"
   @override
   Widget build(BuildContext context) {
@@ -111,11 +112,12 @@ class _HomePageState extends State<HomePage> {
                             fontWeight: FontWeight.bold),
                       ),
                     )
-                  ]),
+                  ]
+              ),
             ),
           ),
           Expanded(
-            flex: 3,
+            flex: 3, // takes up the same space as 3 items
             child: Container(
               // Button Grid
               child: GridView.builder(
@@ -208,7 +210,8 @@ class _HomePageState extends State<HomePage> {
                             : Colors.black,
                       );
                     }
-                  }), // GridView.builder
+                  }
+                ), // GridView.builder
             ),
           ),
         ],
@@ -237,15 +240,21 @@ class _HomePageState extends State<HomePage> {
       double eval = exp.evaluate(EvaluationType.REAL, cm);
       answer = eval.toString();
     }else{
+
       answer = "Calculating...";
       late Future<String> evalResult = fetchEvaluatedResult(finaluserinput);
+
+
       evalResult.then((String result) {
-        print(result);
+        // print(result);
         setState((){answer = result;});
+
       }).catchError((error) {
         print(error);
         setState((){answer = "Unable to connect to eval servers!";});
       });
+
+
     }
   }
 }
@@ -255,14 +264,14 @@ class _HomePageState extends State<HomePage> {
 Future<String> fetchEvaluatedResult(String expression) async {
   // Send request and store repsonse locally
   String request = BACKEND_URL + "calculate/" + expression;
-  print("GET `"+request+"`");
-  final response = await http.get(
-    Uri.parse(request)
-  );
+  // print("GET `"+request+"`");
 
-  print("Response code: "+response.statusCode.toString());
+  final response = await http.get(Uri.parse(request));
+
+  // print("Response code: "+response.statusCode.toString());
   if(response.statusCode == 200){
-    print(response.body);
+    // print(response.body);
+    // Get the result from the response and turn it into a string.
     return jsonDecode(response.body)['result'].toString();
   }else{
     return "Unable to connect to eval servers!";
