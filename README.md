@@ -1,7 +1,10 @@
 # Flutter-Calculator
 This is a simple calculator mobile application built on Flutter and Spring 📱 <br />
 This guide was created by Hayden Hanson, Joshua Hilbert, Nicholas Thor Page and Willie Warren <br />
-
+<br>
+<img src="https://github.com/GenericStartup/Flutter-Calculator/blob/main/Photos/Demo1.PNG" width="300" height="580"/>
+<img src="https://github.com/GenericStartup/Flutter-Calculator/blob/main/Photos/Demo2.PNG" width="300" height="580"/>
+<br>
 # Getting Started...
 *If you get lost, check out Flutters official documentation at https://docs.flutter.dev/get-started/install and clicking on your OS* <br />
 
